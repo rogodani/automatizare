@@ -1,10 +1,12 @@
 {
+  "automationLogDir": "~/log/",
+  "automationLogFile": "automation.log",
   "consumerKey": "TEST",
   "consumerSecret": "TEST",
   "accessTokenKey": "TEST",
   "accessTokenSecret": "TEST",
 
-  "screenUser": "TEST"
+  "screenUser": "TEST",
 
   "dummyParam": "TEST"
 }

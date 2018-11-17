@@ -1,6 +1,10 @@
 {
-  "consumerKey": "Tn3BgzsZfZFqTtLFijcOZbbuf",
-  "consumerSecret": "50FB542xiEacbyYl97CWHLsiRNSF0FgoxiGzDsPAbpYvTDGQl0",
-  "accessTokenKey": "1038712839693844481-VIhKeS01B78lMcnG3s9DQXUW8WTlLo",
-  "accessTokenSecret": "Gvc7DFpCW4wOsh7Ib86FRbZafpl4Lcq0Gb7OGdwoQwCpV"
+  "consumerKey": "TEST",
+  "consumerSecret": "TEST",
+  "accessTokenKey": "TEST",
+  "accessTokenSecret": "TEST",
+
+  "screenUser": "TEST"
+
+  "dummyParam": "TEST"
 }

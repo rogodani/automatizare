@@ -1,6 +1,9 @@
 {
   "automationLogDir": "~/log/",
   "automationLogFile": "automation.log",
+
+  "outdoorTemperatureLogFile": "~/log/temperature/outdoor/",
+
   "consumerKey": "TEST",
   "consumerSecret": "TEST",
   "accessTokenKey": "TEST",

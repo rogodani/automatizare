@@ -38,7 +38,6 @@ class StartLogging:
             Launch the logging process after checking if the log dir and file exist
         """
         if not self.check_log_dir():
-            print(f'{self.log_dir} is missing')
             os.mkdir(os.path.expanduser(self.log_dir))
             self.create_log_file()
             self.launch()

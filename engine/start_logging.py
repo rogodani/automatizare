@@ -52,7 +52,7 @@ class StartLogging:
         """
             Launch the logging process
         """
-        logging.basicConfig(filename=self.path, level=logging.INFO)
+        logging.basicConfig(format='%(asctime)s : %(message)s', datefmt='%d-%b-%y %H:%M:%S', filename=self.path, level=logging.INFO)
         logging.getLogger().addHandler(logging.StreamHandler())
 
     def check_log_dir(self):

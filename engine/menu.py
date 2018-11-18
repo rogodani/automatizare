@@ -1,19 +1,22 @@
 """
     preparing a message with the commands
 """
-class Commands():
+
+
+class Menu():
     """
         Methods:
             commands_list
     """
+
     @staticmethod
-    def commands_list():
+    def menu_list():
         """
             return:
                 a message with the avaibale commands
         """
         msg = ""
-        with open("commands.txt",'r') as f:
-            for line in f:
+        with open("menu.txt", 'r') as file:
+            for line in file:
                 msg += line
             return msg

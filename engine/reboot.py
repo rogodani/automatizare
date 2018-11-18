@@ -3,18 +3,30 @@
 """
 from time import sleep
 import logging
-from engine.commands import Commands
+from engine.menu import Menu
 
 
 class Reboot:
+    """
+        Methods:
+            start
+    """
+
     def __init__(self, sleep_time):
         self.sleep_time = sleep_time
 
     def start(self, temp_log_file):
+        """
+            Parameters:
+                temp_log_file: path to the temperature log file
+            Return:
+                a message if the system is ready or not
+        """
         sleep(self.sleep_time * 60)
         if temp_log_file:
-            logging.info("--- SYSTEM REBOOT --- you can start send commands")
-            return "\n--- SYSTEM REBOOT ---\nyou can start send commands\n" + Commands().commands_list()
-        else:
-            logging.info("--- SYSTEM REBOOT --- !!! LOG FILE IS MISSING !!!")
-            return "\n--- SYSTEM REBOOT ---\n!!! LOG FILE IS MISSING !!!"
+            msg = "--- SYSTEM REBOOT --- you can start send commands"
+            logging.info(msg)
+            return "msg" + Menu().menu_list()
+        msg = "--- SYSTEM REBOOT --- !!! LOG FILE IS MISSING !!!"
+        logging.info(msg)
+        return msg

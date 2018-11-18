@@ -2,6 +2,7 @@
 Run all the code
 """
 import sys
+from time import sleep
 from engine.automation_config import AutomationConfig
 from engine.start_logging import StartLogging
 from engine.twitter_integration import TwitterIntegration
@@ -27,4 +28,10 @@ if __name__ == '__main__':
     print('reboot')
     tweet.reply(Reboot(CONFIG.get_param("delay_reboot")).start(temperature.check_log_path()))
 
-    tweet.twitter_request()
+    while True:
+        missing_logs = temperature.missing_logs()
+        if missing_logs is not "OK":
+            tweet.reply(missing_logs)
+            break
+        tweet.twitter_request()
+        sleep(CONFIG.get_param("delay_reboot"))

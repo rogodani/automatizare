@@ -3,6 +3,7 @@
 """
 from time import sleep
 import logging
+from engine.commands import Commands
 
 
 class Reboot:
@@ -13,13 +14,7 @@ class Reboot:
         sleep(self.sleep_time * 60)
         if temp_log_file:
             logging.info("--- SYSTEM REBOOT --- you can start send commands")
-            return "\n--- SYSTEM REBOOT ---\nyou can start send commands\n"
-            # TODO
-            # uncommet de following line after the reply is available
-            # reply("\n--- SYSTEM REBOOT ---\nyou can start send commands\n" + CommandsHelp().commands_list())
+            return "\n--- SYSTEM REBOOT ---\nyou can start send commands\n" + Commands().commands_list()
         else:
             logging.info("--- SYSTEM REBOOT --- !!! LOG FILE IS MISSING !!!")
             return "\n--- SYSTEM REBOOT ---\n!!! LOG FILE IS MISSING !!!"
-            # TODO
-            # uncommet de following line after the reply is available
-            # reply("\n--- SYSTEM REBOOT ---\n!!! LOG FILE IS MISSING !!!")

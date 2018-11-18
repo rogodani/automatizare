@@ -34,7 +34,6 @@ class VolatileParams(AutomationConfig):
         with open(self.path, "r") as jsonFile:
             data = json.load(jsonFile)
 
-        print(data)
         data[param] = value
 
         with open(self.path, "w") as jsonFile:

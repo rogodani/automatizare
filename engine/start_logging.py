@@ -47,6 +47,7 @@ class StartLogging:
             logging.info(f'Creating log file {self.log_file} in {self.log_dir}')
         else:
             self.launch()
+            logging.info('Logging start')
 
     def launch(self):
         """

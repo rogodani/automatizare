@@ -4,6 +4,7 @@
 import twitter
 from engine.volatil_params import VolatileParams
 from engine.date_formating import DateFormating
+import logging
 
 
 class TwitterIntegration:
@@ -23,6 +24,7 @@ class TwitterIntegration:
                                access_token_key=self.access_token_key,
                                access_token_secret=self.access_token_secret)
         self.users = users
+        logging.info("Twitter API initialized")
 
     def twitter_request(self, reboot=False):
         user_timeline = self.api.GetUserTimeline(screen_name="DRogozan", count=1)

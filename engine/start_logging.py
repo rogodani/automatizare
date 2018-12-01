@@ -41,10 +41,10 @@ class StartLogging:
             os.mkdir(os.path.expanduser(self.log_dir))
             self.create_log_file()
             self.launch()
-            logging.info("Creating log directory %d and log file %d" % (self.log_dir, self.log_file))
+            logging.info("Creating log directory %s and log file %s" % (self.log_dir, self.log_file))
         elif not self.check_log_file():
             self.create_log_file()
-            logging.info("Creating log file %d in %d" % (self.log_dir, self.log_file))
+            logging.info("Creating log file %s in %s" % (self.log_dir, self.log_file))
         else:
             self.launch()
             logging.info('Logging start')

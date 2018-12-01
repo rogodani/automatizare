@@ -18,7 +18,7 @@ class Temperature:
 
     def __init__(self, log_path):
         self.log_path = os.path.expanduser(log_path)
-        logging.info(f"Temperature log path: {self.log_path}")
+        logging.info("Temperature log path: %s" % (self.log_path))
 
     def check_log_path(self):
         """

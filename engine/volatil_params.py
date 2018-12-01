@@ -31,6 +31,7 @@ class VolatileParams(AutomationConfig):
                 Parameter that need to be changed
             value:
                 The value of the parameter
+                :rtype:
         """
         with open(self.path, "r") as json_file:
             data = json.load(json_file)

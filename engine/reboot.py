@@ -27,7 +27,7 @@ class Reboot:
         if temp_log_file:
             msg = "--- SYSTEM REBOOT --- you can start send commands"
             logging.info(msg)
-            return "msg" + Menu().menu_list()
+            return msg + Menu().menu_list()
         msg = "--- SYSTEM REBOOT --- !!! LOG FILE IS MISSING !!!"
         logging.info(msg)
         return msg

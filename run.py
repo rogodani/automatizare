@@ -26,12 +26,14 @@ if __name__ == '__main__':
     temperature = Temperature(CONFIG.get_param("outdoorTemperatureLogFile"))
 
     print('reboot')
+    tweet.get_twitter_request(1)
     tweet.reply(Reboot(CONFIG.get_param("delay_reboot")).start(temperature.check_log_path()))
 
+    print('while')
     while True:
         missing_logs = temperature.missing_logs()
         if missing_logs is not "OK":
             tweet.reply(missing_logs)
             break
-        tweet.get_twitter_request()
-        sleep(CONFIG.get_param("delay_reboot"))
+        print(tweet.get_twitter_request())
+        sleep(CONFIG.get_param("delay_reboot") * 60)

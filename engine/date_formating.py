@@ -9,6 +9,7 @@ class DateFormating:
         Methods:
             date_now
     """
+
     def __init__(self, date_format):
         self.date_format = date_format
 

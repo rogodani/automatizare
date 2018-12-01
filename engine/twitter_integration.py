@@ -10,8 +10,10 @@ import logging
 class TwitterIntegration:
     """
         Methods:
-            get_param
-            twitter_api_details
+            get_twitter_request:
+                get the user timeline
+            reply:
+                reply to twitter messages
     """
 
     def __init__(self, connection_details, users):
@@ -26,7 +28,9 @@ class TwitterIntegration:
         self.users = users
         logging.info("Twitter API initialized")
 
-    def twitter_request(self, reboot=False):
+    def get_twitter_request(self, reboot=False):
+        # TODO: should be update to have diffrent outputs when the system reboots
+        # TODO: shoul be update to work with multiple messages
         user_timeline = self.api.GetUserTimeline(screen_name="DRogozan", count=1)
         print(user_timeline)
         VolatileParams().change_param("test")

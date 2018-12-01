@@ -1,9 +1,9 @@
 """
     read/write in a file the volatile params
 """
-from engine.automation_config import AutomationConfig
 import json
 import os
+from engine.automation_config import AutomationConfig
 
 
 class VolatileParams(AutomationConfig):
@@ -16,10 +16,11 @@ class VolatileParams(AutomationConfig):
     def __init__(self):
         self.path = "volatile_params.json"
         if not os.path.isfile(self.path):
-            with open(self.path, "w") as jsonFile:
-                json.dump({}, jsonFile)
-        with open(self.path) as file:
-            self.args = json.load(file)
+            with open(self.path, "w") as json_file:
+                json.dump({}, json_file)
+        # with open(self.path) as file:
+        #     self.args = json.load(file)
+        super(VolatileParams, self).__init__(self.path)
 
     def change_param(self, param, value=None):
         """
@@ -31,10 +32,10 @@ class VolatileParams(AutomationConfig):
             value:
                 The value of the parameter
         """
-        with open(self.path, "r") as jsonFile:
-            data = json.load(jsonFile)
+        with open(self.path, "r") as json_file:
+            data = json.load(json_file)
 
         data[param] = value
 
-        with open(self.path, "w") as jsonFile:
-            json.dump(data, jsonFile)
+        with open(self.path, "w") as json_file:
+            json.dump(data, json_file)

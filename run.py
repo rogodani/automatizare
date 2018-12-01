@@ -33,5 +33,5 @@ if __name__ == '__main__':
         if missing_logs is not "OK":
             tweet.reply(missing_logs)
             break
-        tweet.twitter_request()
+        tweet.get_twitter_request()
         sleep(CONFIG.get_param("delay_reboot"))

@@ -14,7 +14,7 @@ class Reboot:
 
     def __init__(self, sleep_time):
         self.sleep_time = sleep_time
-        logging.info("Reboot delay: %d" % (self.sleep_time))
+        logging.info("Reboot delay: %f" % (self.sleep_time))
 
     def start(self, temp_log_file):
         """

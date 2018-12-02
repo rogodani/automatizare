@@ -2,3 +2,4 @@ test.json
 volatile_params.json
 .idea
 **/__pycache__/**
+*.pyc

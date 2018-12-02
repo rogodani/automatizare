@@ -29,7 +29,7 @@ if __name__ == '__main__':
 
     print('reboot')
     tweet.get_twitter_request(CONFIG_FILE, 1)
-    tweet.reply(Reboot(CONFIG.get_param("delay_reboot")).start(temperature.check_log_path()))
+    tweet.reply(Reboot(CONFIG.get_param("delay_reboot")).start(temperature.check_log_path(), CONFIG_FILE))
 
     print('while')
     while True:

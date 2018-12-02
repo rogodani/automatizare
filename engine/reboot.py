@@ -16,7 +16,7 @@ class Reboot:
         self.sleep_time = sleep_time
         logging.info("Reboot delay: %f" % (self.sleep_time))
 
-    def start(self, temp_log_file):
+    def start(self, temp_log_file, CONFIG_FILE):
         """
             Parameters:
                 temp_log_file: path to the temperature log file
@@ -27,7 +27,7 @@ class Reboot:
         if temp_log_file:
             msg = "--- SYSTEM REBOOT --- you can start send commands"
             logging.info(msg)
-            return msg + Menu().menu_list()
+            return msg + Menu(CONFIG_FILE).menu_list()
         msg = "--- SYSTEM REBOOT --- !!! LOG FILE IS MISSING !!!"
         logging.info(msg)
         return msg

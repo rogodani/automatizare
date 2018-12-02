@@ -30,5 +30,5 @@ class Menu():
 
     def commands(self, command):
         print("command:", command)
-        if command == 2:
+        if command == "2":
             OnOffRelay(17).relay_on(time_on=3)

@@ -35,15 +35,14 @@ class TwitterIntegration:
         else:
             user_timeline = self.api.GetUserTimeline(screen_name=self.users,
                                                      since_id=VolatileParams().get_param("lastTweetId" + self.users))
-            if len(user_timeline) > 0:
-                print(user_timeline[0].id)
-                VolatileParams().change_param("lastTweetId" + self.users, user_timeline[0].id)
-
             for item in user_timeline:
                 msg_text = " ".join(word for word in item.text.lower().split(" ") if not word.startswith("@"))
                 for option in Menu().menu_options():
                     if option in msg_text:
                         Menu().commands(option)
+        if len(user_timeline) > 0:
+            print(user_timeline[0].id)
+            VolatileParams().change_param("lastTweetId" + self.users, user_timeline[0].id)
 
         return user_timeline
 

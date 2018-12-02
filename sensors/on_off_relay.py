@@ -13,6 +13,7 @@ class OnOffRelay:
         self.relay = DigitalOutputDevice(gpio_no, active_high=False)
 
     def relay_on(self):
+        print("relay on ----------")
         self.relay.on()
 
     def relay_off(self):

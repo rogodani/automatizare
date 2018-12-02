@@ -42,4 +42,5 @@ class Menu():
         elif command == "5":
             OnOffRelay(self.CONFIG.get_param("backyardLights")).relay_on()
         elif command == "6":
+            print("gpios:", self.CONFIG.lights_gpios())
             OnOffRelay.all_lights_off(self.CONFIG.lights_gpios())

@@ -40,3 +40,6 @@ class AutomationConfig:
         """
         return (self.get_param(self.CONSUMER_KEY), self.get_param(self.CONSUMER_SECRET),
                 self.get_param(self.ACCESS_TOKEN_KEY), self.get_param(self.ACCESS_TOKEN_SECRET))
+
+    def lights_gpios(self):
+        return [self.get_param(item) for item in self.args if "lights" in str(item).lower()]

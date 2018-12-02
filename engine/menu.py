@@ -30,7 +30,15 @@ class Menu():
 
     def commands(self, command):
         print("command:", command)
-        if command == "2":
+        if command == "1":
+            pass
+        elif command == "2":
             OnOffRelay(17).relay_on()
         elif command == "3":
             OnOffRelay(18).relay_on()
+        elif command == "4":
+            OnOffRelay(18).relay_on()
+        elif command == "5":
+            OnOffRelay(18).relay_on()
+        elif command == "6":
+            OnOffRelay.all_lights_off(AutomationConfig("test.json").lights_gpios())

@@ -13,3 +13,7 @@ class OnOffRelay:
 
     def relay_off(self):
         os.system("gpio -g write " + self.gpio_no + " 1")
+
+    def all_lights_off(self, gpios):
+        for gpio in gpios:
+            os.system("gpio -g write " + self.gpio_no + " 1")

@@ -1,5 +1,8 @@
 {
-  "1": "Outdoor temperature",
-  "2": "Lights 1",
-  "3": "Lights 2"
+  "1": "Outdoor Temperature",
+  "2": "Door Lights",
+  "3": "Parking Place Lights",
+  "4": "Kitchen Terrace Lights",
+  "5": "Backyard Lights",
+  "6": "All Lights OFF"
 }

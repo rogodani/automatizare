@@ -17,4 +17,4 @@ class OnOffRelay:
     @staticmethod
     def all_lights_off(gpios):
         for gpio in gpios:
-            os.system("gpio write " + gpio + " 1")
+            os.system("gpio write " + str(gpio) + " 1")

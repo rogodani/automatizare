@@ -4,7 +4,7 @@ import os
 class OnOffRelay:
 
     def __init__(self, gpio_no):
-        self.gpio_no = gpio_no
+        self.gpio_no = str(gpio_no)
         os.system("gpio -g mode " + self.gpio_no + " out")
 
     def relay_on(self):

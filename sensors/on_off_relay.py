@@ -1,20 +1,15 @@
-from gpiozero import DigitalOutputDevice
-from gpiozero.pins.pigpio import PiGPIOFactory
-from time import sleep
+import os
 
 
 class OnOffRelay:
 
     def __init__(self, gpio_no):
-        # factory = PiGPIOFactory(host='192.168.1.101')
-        #TODO comment factory
-        # self.relay = DigitalOutputDevice(gpio_no, active_high=False, pin_factory=factory)
-        # print("initiate the object")
-        self.relay = DigitalOutputDevice(gpio_no, active_high=False)
+        self.gpio_no = gpio_no
+        os.system("gpio -g mode " + self.gpio_no + " out")
 
     def relay_on(self):
         print("relay on ----------")
-        self.relay.on()
+        os.system("gpio -g write " + self.gpio_no + " 0")
 
     def relay_off(self):
-        self.relay.off()
+        os.system("gpio -g write " + self.gpio_no + " 1")

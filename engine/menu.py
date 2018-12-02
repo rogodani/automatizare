@@ -12,8 +12,9 @@ class Menu():
             commands_list
     """
 
-    def __init__(self):
+    def __init__(self, CONFIG_FILE):
         self.menu = dict(AutomationConfig("menu.json").args)
+        self.CONFIG = AutomationConfig(CONFIG_FILE)
 
     def menu_list(self):
         """
@@ -33,12 +34,12 @@ class Menu():
         if command == "1":
             pass
         elif command == "2":
-            OnOffRelay(17).relay_on()
+            OnOffRelay(self.CONFIG.get_param("doorLights")).relay_on()
         elif command == "3":
-            OnOffRelay(18).relay_on()
+            OnOffRelay(self.CONFIG.get_param("parkingPlaceLights")).relay_on()
         elif command == "4":
-            OnOffRelay(18).relay_on()
+            OnOffRelay(self.CONFIG.get_param("kitchenTerraceLights")).relay_on()
         elif command == "5":
-            OnOffRelay(18).relay_on()
+            OnOffRelay(self.CONFIG.get_param("backyardLights")).relay_on()
         elif command == "6":
-            OnOffRelay.all_lights_off(AutomationConfig("test.json").lights_gpios())
+            OnOffRelay.all_lights_off(self.CONFIG.lights_gpios())
